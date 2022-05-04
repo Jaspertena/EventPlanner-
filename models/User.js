@@ -41,7 +41,7 @@ User.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-    honeNumber:{
+    phoneNumber:{
         type: DataTypes.STRING,
         allowNull: true,
     },
