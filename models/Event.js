@@ -27,11 +27,11 @@ Event.init(
       type: DataTypes.STRING,
     },
     event_start: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     event_end: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: true,
     },
     location: {
