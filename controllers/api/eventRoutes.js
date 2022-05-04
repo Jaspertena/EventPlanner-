@@ -34,7 +34,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     try {
         const  [affectedRows] = Event.destroy({
             where: {
-                id: req.params.id;
+                id: req.params.id,
             }
         });
 
