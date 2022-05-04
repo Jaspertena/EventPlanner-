@@ -1,4 +1,3 @@
-
 // define event table
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
@@ -25,7 +24,7 @@ Event.init(
       allowNull: false,
     },
     description: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
     },
     event_start: {
       type: DataTypes.DATE,
@@ -40,7 +39,7 @@ Event.init(
       allowNull: true,
     },
     cost: {
-      type: DataTYpes.DECIMAL,
+      type: DataTypes.DECIMAL,
       allowNull: true,
     },
     attendees: {
