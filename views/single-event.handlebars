@@ -1,15 +1,15 @@
 <div class="container-fluid single-event">
     <div class="card">
         <div class="card-header">
-            <h2>{{name}}</h2>
+            <h2>{{event.name}}</h2>
         </div>
         <div class="card-body">
-            <p>{{ description }}</p>
-            <p>{{ location }}</p>
-            <p>{{ event_start }}</p>
-            <p>{{ event_end }}</p>
-            <p>{{ cost }}</p>
-            <p><a href="{{ link }}">{{ link }}</a></p>
+            <p>{{ event.description }}</p>
+            <p>{{ event.location }}</p>
+            <p>{{ event.event_start }}</p>
+            <p>{{ event.event_end }}</p>
+            <p>{{ event.cost }}</p>
+            <p><a href="{{ event.link }}">{{ event.link }}</a></p>
             
         </div>
     </div>

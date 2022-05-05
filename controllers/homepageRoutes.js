@@ -20,10 +20,10 @@ router.get("/event/:id", async (req, res) => {
     const eventData = await Event.findByPk(req.params.id, {
       include: [
         User,
-        {
-          model: Comment,
-          include: [User],
-        },
+        // {
+        //   model: Comment,
+        //   include: [User],
+        // },
       ],
     });
 
