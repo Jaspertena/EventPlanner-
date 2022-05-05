@@ -39,9 +39,18 @@ router.get("/event/:id", async (req, res) => {
   }
 });
 
+router.get("/new-event", (req, res) => {
+  if (req.session.loggedIn) {
+    res.render("new-event");
+    return;
+  }
+
+  res.redirect("login");
+});
+
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/NewEvent");
     return;
   }
 
