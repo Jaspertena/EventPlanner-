@@ -41,12 +41,12 @@ User.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-    phone_number:{
+    phoneNumber:{
         type: DataTypes.STRING,
         allowNull: true,
     },
     birthday:{
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: true,
     },
   },
