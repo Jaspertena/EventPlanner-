@@ -6,9 +6,9 @@ router.get("/", async (req, res) => {
     const eventData = await Event.findAll({
       include: [User],
     });
-
+    console.log(eventData);
     const events = eventData.map((event) => event.get({ plain: true }));
-    //enter the handlebar file name here
+    console.log(events);
     res.render("all-events", { events });
   } catch (err) {
     res.status(500).json(err);
@@ -30,7 +30,7 @@ router.get("/event/:id", async (req, res) => {
     if (eventData) {
       const event = eventData.get({ plain: true });
       // insert handlebars file here
-      res.render("", { event });
+      res.render("single-event", { event });
     } else {
       res.status(404).end();
     }
