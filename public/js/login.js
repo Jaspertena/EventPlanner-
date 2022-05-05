@@ -1,17 +1,4 @@
-// login page
 
-
-// const emailEl = document.querySelector('#email-input-login')
-// const passwordEl = document.querySelector('#password-input-login');
-
-// const consoleLog = function (event) {
-//   event.preventDefault(); 
-//   console.log(emailEl, passwordEl)
-// }
-
-// document
-// .querySelector('#login-form')
-// .addEventListener('login-btn', consoleLog);
 const loginFormHandler = async function(event) {
     event.preventDefault();
   
@@ -32,7 +19,7 @@ const loginFormHandler = async function(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/main');
+      document.location.replace('/');
       
     } else {
       alert('Failed to login');
