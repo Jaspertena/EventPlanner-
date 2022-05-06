@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Event, Comment, User } = require("../models");
-const withAuth = require("../utils/auth.js")
+const withAuth = require("../utils/auth.js");
 
 router.get("/", async (req, res) => {
   try {
@@ -27,11 +27,12 @@ router.get("/event/:id", async (req, res) => {
         // },
       ],
     });
+    console.log(eventData);
 
     if (eventData) {
       const event = eventData.get({ plain: true });
       // insert handlebars file here
-      res.render("single-event", { Event });
+      res.render("single-event", { event });
     } else {
       res.status(404).end();
     }
@@ -41,9 +42,8 @@ router.get("/event/:id", async (req, res) => {
 });
 
 router.get("/new-event", withAuth, (req, res) => {
-  
   // if (req.session.loggedIn) {
-  
+
   //   res.render("new-event");
   //   return;
   // }
