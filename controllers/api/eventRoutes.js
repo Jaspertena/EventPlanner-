@@ -5,8 +5,16 @@ const withAuth = require("../../utils/auth");
 
 router.post("/", async (req, res) => {
   try {
+
+    const { name, description, event_start, event_end, location, cost, link } = req.body;
     const newEvent = await Event.create({
-      ...req.body,
+      name,
+      description,
+      event_start,
+      event_end,
+      location,
+      cost,
+      link,
       user_id: req.session.user_id,
     });
     res.status(200).json(newEvent);
