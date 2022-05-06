@@ -17,6 +17,10 @@ const signupFormHandler = async function (event) {
       name: nameEl.value,
       email: emailEl.value,
       password: passwordEl.value,
+      address: addressEl.value,
+      phoneNumber: phoneNumberEl.value,
+      birthday: birthdayEl.valuepasswordEl.value,
+
     }),
     headers: { "Content-Type": "application/json" },
   });
