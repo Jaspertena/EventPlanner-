@@ -25,6 +25,7 @@ Event.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     event_start: {
       type: DataTypes.DATE,
@@ -42,10 +43,10 @@ Event.init(
       type: DataTypes.DECIMAL,
       allowNull: true,
     },
-    attendees: {
-      type: DataTypes.JSON,
-      allowNull: true,
-    },
+    // attendees: {
+    //   type: DataTypes.JSON,
+    //   allowNull: true,
+    // },
     link: {
       type: DataTypes.STRING,
       allowNull: true,
