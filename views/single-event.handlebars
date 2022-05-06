@@ -5,13 +5,15 @@
         </div>
         <div class="card-body">
             <p>{{ event.description }}</p>
-            <p>{{ event.location }}</p>
-            <p>{{ event.event_start }}</p>
+            <p id="event-location">{{ event.location }}</p>
+            <p id="event-date">{{ event.event_start }}</p>
             <p>{{ event.event_end }}</p>
             <p>{{ event.cost }}</p>
             <p><a href="{{ event.link }}">{{ event.link }}</a></p>
+            <p id="weatherData"></p>
             
         </div>
     </div>
-
 </div>
+
+{{!-- <script src="/js/eventWeather.js"></script> --}}
