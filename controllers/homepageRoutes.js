@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Event, Comment, User } = require("../models");
+const withAuth = require("../utils/auth.js")
 
 router.get("/", async (req, res) => {
   try {
@@ -7,7 +8,7 @@ router.get("/", async (req, res) => {
       include: [User],
     });
     console.log(eventData);
-    const events = eventData.map((event) => event.get({ plain: true }));
+    const events = eventData.map((Event) => Event.get({ plain: true }));
     console.log(events);
     res.render("all-events", { events });
   } catch (err) {
@@ -30,7 +31,7 @@ router.get("/event/:id", async (req, res) => {
     if (eventData) {
       const event = eventData.get({ plain: true });
       // insert handlebars file here
-      res.render("single-event", { event });
+      res.render("single-event", { Event });
     } else {
       res.status(404).end();
     }
@@ -39,13 +40,16 @@ router.get("/event/:id", async (req, res) => {
   }
 });
 
-router.get("/new-event", (req, res) => {
-  if (req.session.loggedIn) {
-    res.render("new-event");
-    return;
-  }
+router.get("/new-event", withAuth, (req, res) => {
+  
+  // if (req.session.loggedIn) {
+  
+  //   res.render("new-event");
+  //   return;
+  // }
 
-  res.redirect("login");
+  // res.redirect("login");
+  res.render("new-event");
 });
 
 router.get("/login", (req, res) => {
